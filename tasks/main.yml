@@ -1,18 +1,7 @@
 ---
 
-# Usage: policy_name is one of a set that would be managed by the role. 
-# - { role: ansible-iam-role, iam_role_name: 'delme', policy_name: 'account_secrets' }
-
-
-# can't have a dynamic file name in the lookup. The solution is template files on remote
-# - name: attach policy
-#   iam_policy: >
-#     iam_type=role
-#     iam_name="{{iam_role_name}}"
-#     policy_name="{{policy_name}}"
-#     policy_json="{{lookup( 'template', {{policy.json.j2}} ) }}"
-#     state=present
-
+# Deleting the template file after each run would require conditionally adding it back when needed
+# which is not trivial
 - name: template
   template:
     src: "{{policy_name}}.json.j2"
@@ -31,5 +20,3 @@
     policy_name: "{{policy_name}}"
     policy_document: "/tmp/{{policy_name}}.json"
     state: present
-
-# Cleanup template file?
