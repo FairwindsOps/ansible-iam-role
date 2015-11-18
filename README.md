@@ -1,5 +1,9 @@
 # ansible-iam-role
 
+# Role Variables
+
+* ```secrets_bucket``` is a required variable.
+
 # Usage
 
 ```
