@@ -7,13 +7,13 @@
     src: "{{policy_name}}.json.j2"
     dest: "/tmp/{{policy_name}}.json"
 
-- name:
+- name: ensure role exists
   iam:
     iam_type: role
     name: "{{iam_role_name}}"
     state: present
 
-- name: attach policy
+- name: attach policy to role
   iam_policy:
     iam_type: role
     iam_name: "{{iam_role_name}}"
