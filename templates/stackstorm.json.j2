@@ -105,7 +105,7 @@
                 "s3:ListBucket"
             ],
             "Resource": [
-                "arn:aws:s3:::foo"
+                "arn:aws:s3:::{{secrets-bucket}}"
             ]
         },
         {
@@ -116,7 +116,7 @@
                 "s3:DeleteObject"
             ],
             "Resource": [
-                "arn:aws:s3:::foo/*"
+                "arn:aws:s3:::{{secrets-bucket}}/*"
             ]
         },
         {
