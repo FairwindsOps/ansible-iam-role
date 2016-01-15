@@ -4,7 +4,7 @@
 # which is not trivial
 - name: template
   template:
-    src: "{{policy_name}}.json.j2"
+    src: "{{iam_role_policy_template_path}}{{policy_name}}.json.j2"
     dest: "/tmp/{{policy_name}}.json"
 
 - name: ensure role exists
