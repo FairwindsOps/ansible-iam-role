@@ -1,1 +1,3 @@
 ---
+
+iam_role_policy_template_path: "" # Default assumes template within this role
