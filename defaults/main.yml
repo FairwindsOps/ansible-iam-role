@@ -1,1 +1,6 @@
 ---
+
+iam_role_bucket_name: "{{ secrets_bucket }}"
+
+# required for the ro_account_secrets policy:
+# iam_role_env_name: ''
