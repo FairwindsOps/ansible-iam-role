@@ -3,7 +3,7 @@
     {
       "Effect": "Allow",
       "Action": ["s3:ListBucket"],
-      "Resource": ["arn:aws:s3:::{{ir_bucket}}"]
+      "Resource": ["arn:aws:s3:::{{iam_role_bucket_name}}"]
     },
     {
       "Effect": "Allow",
@@ -11,7 +11,7 @@
         "s3:GetObject",
         "s3:GetObjectVersion"
       ],
-      "Resource": ["arn:aws:s3:::{{ir_bucket}}/*"]
+      "Resource": ["arn:aws:s3:::{{iam_role_bucket_name}}/*"]
     }
     ]
 }
