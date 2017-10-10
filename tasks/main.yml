@@ -4,19 +4,19 @@
 # which is not trivial
 - name: template
   template:
-    src: "{{policy_name}}.json.j2"
-    dest: "/tmp/{{policy_name}}.json"
+    src: "{{ policy_name }}.json.j2"
+    dest: "/tmp/{{ policy_name }}.json"
 
 - name: ensure role exists
   iam:
     iam_type: role
-    name: "{{iam_role_name}}"
+    name: "{{ iam_role_name }}"
     state: present
 
 - name: attach policy to role
   iam_policy:
     iam_type: role
-    iam_name: "{{iam_role_name}}"
-    policy_name: "{{policy_name}}"
-    policy_document: "/tmp/{{policy_name}}.json"
+    iam_name: "{{ iam_role_name }}"
+    policy_name: "{{ policy_name }}"
+    policy_document: "/tmp/{{ policy_name }}.json"
     state: present
